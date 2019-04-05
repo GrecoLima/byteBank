@@ -5,7 +5,7 @@ public class Conta {
 	private double saldo;
 	private int agencia;
 	private int conta;
-	private String titularidade; 
+	private Cliente titular; 
 	
 	public void deposita(double valor){
 		this.saldo = saldo + valor;
@@ -41,14 +41,14 @@ public class Conta {
 	public void setConta(int conta) {
 		this.conta = conta;
 	}
-	public String getTitularidade() {
-		return titularidade;
-	}
-	public void setTitularidade(String titularidade) {
-		this.titularidade = titularidade;
+
+	public Cliente getTitular() {
+		return titular;
 	}
 
-	
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
+	}
 	
 }
  
