@@ -1,23 +1,28 @@
-package br.com.byteBank.test;
-
-import br.com.byteBank.beans.Conta;
-
 public class TestaMetodo {
-
 	public static void main(String[] args) {
-		
-		Conta conta = new Conta();
-		conta.setSaldo(100);
-		conta.deposita(100);
-		
-		System.out.println(conta.getSaldo());
-		
-		//Armazena valor do retorno do método saca
-		boolean saldoResgatado = conta.saca(200);
-		
-		System.out.println("Saldo resgatado: " + saldoResgatado);
-		System.out.println("Saldo atual: " + conta.getSaldo());
-		
+		Conta contaDoPaulo = new Conta();
+		contaDoPaulo.deposita(100);
+		contaDoPaulo.deposita(50);
+		System.out.println(contaDoPaulo.getSaldo());
+
+		boolean conseguiuRetirar = contaDoPaulo.saca(20);
+		System.out.println(contaDoPaulo.getSaldo());
+		System.out.println(conseguiuRetirar);
+
+		Conta contaDaMarcela = new Conta();
+		contaDaMarcela.deposita(1000);
+
+		boolean sucessoTransferencia = contaDaMarcela.transfere(300, contaDoPaulo);
+
+		if (sucessoTransferencia) {
+			System.out.println("transferencia com sucesso");
+
+		} else {
+			System.out.println("faltou dinheiro");
+
+		}
+		System.out.println(contaDaMarcela.getSaldo());
+		System.out.println(contaDoPaulo.getSaldo());
 	}
 
 }
